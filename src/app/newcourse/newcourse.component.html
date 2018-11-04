@@ -1,0 +1,55 @@
+<div style="display: flex; justify-content: center; align-items: center; position: relative;top: 110px;">
+  <mat-card class="card">
+    <mat-card-title align="center">Add a Course</mat-card-title>
+    <form class="form" [formGroup]="courseForm" (submit)="addcourse();">
+      <mat-form-field>
+        <input formControlName="coursename"
+               type="text"
+               matInput
+               placeholder="Course Name">
+        <mat-error>Please Fill this Field</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text"
+               matInput
+               placeholder="Course For"
+               aria-label="Number" formControlName="courseselect"
+               [matAutocomplete]="auto">
+        <mat-icon>expand_more</mat-icon>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async"
+                      [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-error>Please Fill this Field</mat-error>
+      </mat-form-field>
+      <mat-form-field><textarea formControlName="descr"
+                                matInput placeholder="Short Description"></textarea>
+        <mat-error>Please Fill this Field</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+               [matDatepicker]="picker"
+               placeholder="Last Date to apply(mm/dd/yyyy)">
+        <mat-datepicker-toggle matSuffix
+                               [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field><input formControlName="dur"
+                             type="text" matInput
+                             placeholder="Duration">
+        <mat-error>Please Fill this Field</mat-error>
+      </mat-form-field>
+      <mat-form-field><input formControlName="elg"
+                             type="text"
+                             matInput
+                             placeholder="Eligibility">
+      </mat-form-field>
+      <button class="button"
+              mat-raised-button
+              color="primary"
+              [disabled]="courseForm.invalid">Add</button>
+    </form>
+  </mat-card>
+</div>

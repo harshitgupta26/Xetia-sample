@@ -1,0 +1,29 @@
+<div ngClass="wrapper">
+    <mat-card class="cards" *ngFor="let course of courses" [ngClass.lt-sm]="'smallcard'" [ngClass.lt-md]="'smallcard'">
+      <mat-card-header>
+        <mat-card-title>{{course.Course}}</mat-card-title>
+        <mat-card-subtitle>Serial No: {{course.Sr_No}}</mat-card-subtitle>
+        <mat-card-subtitle>Duration: {{course.Duration}}</mat-card-subtitle>
+        <mat-card-subtitle>Eligibility: {{course.Eligibility}}</mat-card-subtitle>
+      </mat-card-header>
+      <button mat-raised-button color="accent">Apply</button>
+    </mat-card>
+  </div>
+
+  <!--<table border="1" *ngIf="courses">-->
+    <!--<tr>-->
+      <!--<th>Sr_no</th>-->
+      <!--<th>Course</th>-->
+      <!--<th>Duration</th>-->
+      <!--<th>Eligiblity</th>-->
+      <!--<th>Apply Here</th>-->
+    <!--</tr>-->
+  <!--<tr *ngFor="let course of courses">-->
+    <!--<td>{{course.Sr_No}}</td>-->
+    <!--<td>{{course.Course}}</td>-->
+    <!--<td>{{course.Duration}}</td>-->
+    <!--<td>{{course.Eligibility}}</td>-->
+    <!--<td><button mat-raised-button color="accent">Apply</button></td>-->
+  <!--</tr>-->
+  <!--</table>-->
+

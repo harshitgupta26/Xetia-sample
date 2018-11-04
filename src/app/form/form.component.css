@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 55px;
+}
+.cards {
+  width: 25%;
+  height: 200px;
+  margin: 20px;
+  flex-shrink: 0;
+}
+.smallcard {
+  width: 50%;
+  flex-shrink: 0;
+  margin: 20px;
+  height: 230px;
+}
